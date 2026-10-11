@@ -1,0 +1,172 @@
+[
+    {
+        "key": "shift+alt+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "shift+enter",
+        "when": "inputFocus && vim.mode == 'Normal'",
+        "command": "editor.action.insertLineBefore",
+    },
+    {
+        "command": "workbench.action.toggleSidebarVisibility",
+        "key": "ctrl+alt+e"
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "outline.focus",
+        "key": "i",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // panel
+    {
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+
+    // editor
+    // {
+    //     "key": "ctrl+w",
+    //     "command": "editor.action.smartSelect.expand",
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "shift+alt+right",
+    //     "command": "-editor.action.smartSelect.expand",
+    //     "when": "editorTextFocus"
+    // },
+    // {
+    //     "key": "q",
+    //     "command": "closeReferenceSearch",
+    //     "when": "referenceSearchVisible"
+    // },
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    // {
+    //     "key": "ctrl+k z",
+    //     "command": "workbench.action.toggleZenMode",
+    //     "when": "!isAuxiliaryWindowFocusedContext"
+    // },
+    // {
+    //     "key": "ctrl+k z",
+    //     "command": "-workbench.action.toggleZenMode",
+    //     "when": "!isAuxiliaryWindowFocusedContext"
+    // },
+    {
+        "key": "ctrl+shift+c",
+        "command": "outline.collapse",
+        "when": "outlineFocused"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "explorerViewletFocus"
+    },
+    // agent toggle + focus
+    {
+        "key": "ctrl+alt+s",
+        "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "runCommands",
+        "when": "!auxiliaryBarVisible",
+        "args": {
+            "commands": [
+                "workbench.action.toggleAuxiliaryBar",
+                "composer.focusComposer"
+            ]
+        }
+    },
+    // {
+    //     "key": "ctrl+shift+b",
+    //     "command": "composer.focusComposer",
+    //     "when": "auxiliaryBarVisible && !composerFocused"
+    // },
+    // --- ctrl + alt + b for toogle and focus
+    // {
+    //     "key": "ctrl+alt+b",
+    //     "command": "composer.focusComposer",
+    //     "when": "auxiliaryBarVisible && !composerFocused"
+    // },
+    // {
+    //     "key": "ctrl+alt+b",
+    //     "command": "workbench.action.toggleAuxiliaryBar",
+    //     "when": "auxiliaryBarVisible && composerFocused"
+    // },
+    // ---
+    // Focus to editor
+    {
+        "key": "ctrl+1",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "!cursor.chatEditorGroup"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "-workbench.action.focusFirstEditorGroup",
+        "when": "!cursor.chatEditorGroup.enabled"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-cursor.toggleAgentWindowIDEUnification",
+        "when": "!isGlass && workbenchState != 'empty'"
+    },
+    // {
+    //     "key": "ctrl+shift+e",
+    //     "command": "-fastapi-vscode.searchPathOperations"
+    // }
+
+    {
+        "key": "ctrl+shift+r",
+        "command": "pr:github.open",
+    },
+]
