@@ -1,0 +1,271 @@
+{
+    "editor.rulers": [79, ],
+    // vim settings
+    "vim.leader": "<Space>",
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.timeout": 700,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["O", "O"], 
+            "after": ["O", "<Esc>"]
+        },
+        {
+            "before": ["o", "o"], 
+            "after": ["o", "<Esc>"]
+        },
+        // navigating tab
+        { "before": ["<S-h>"], "commands": [":bprevious"] },
+        { "before": ["<S-l>"], "commands": [":bnext"] },
+
+        // splits
+        { "before": ["leader", "v"], "commands": [":vsplit"] },
+        { "before": ["leader", "s"], "commands": [":split"] },
+        // pane navigation
+        {
+            "before": ["leader", "h"],
+            "commands": ["workbench.action.focusLeftGroup"]
+        },
+        {
+            "before": ["leader", "j"],
+            "commands": ["workbench.action.focusBelowGroup"]
+        },
+        {
+            "before": ["leader", "k"],
+            "commands": ["workbench.action.focusAboveGroup"]
+        },
+        {
+            "before": ["leader", "l"],
+            "commands": ["workbench.action.focusRightGroup"]
+        },
+        // moving pane
+        {
+            "before": ["leader", "H"],
+            "commands": ["workbench.action.moveEditorToPreviousGroup"]
+        },
+        {
+            "before": ["leader", "L"],
+            "commands": ["workbench.action.moveEditorToNextGroup"]
+        },
+        // NICE TO HAVE
+        { "before": ["leader", "w"], "commands": [":w!"] },
+        { "before": ["leader", "q"], "commands": [":q"] },
+        { "before": ["leader", "x"], "commands": [":x!"] },
+
+        { "before": ["leader", "m"], "commands": [":marks"] },
+        { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+        { "before": ["leader", "i"], "commands": ["editor.action.showHover"] },
+        { "before": ["g", "r"], "commands": ["editor.action.revealDefinitionAside"] },
+
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["s", "s"], "after": ["i"," ","<Esc>"] },
+        { "before": ["leader", "p"], "after": ["v","i","w","\"","0","p",] },
+        { "before": ["leader", "y"], "after": ["y","i","w",] },
+        {
+            "before": ["leader", "z"],
+            "commands": ["workbench.action.toggleZenMode"]
+        },
+        {
+            "before": ["leader", "/"],
+            "commands": ["editor.action.commentLine"]
+        },
+        {
+            "before": ["leader", "."],
+            "commands": ["editor.action.indentLine"]
+        },
+        {
+            "before": ["leader", ","],
+            "commands": ["editor.action.outdentLine"]
+        },
+    ],
+    "[python]": {
+        "vim.normalModeKeyBindingsNonRecursive":[
+            { "before": ["s", "s"], "after": ["i"," ","<Esc>"] },
+            { "before": ["leader", "p"], "after": ["v","i","w","\"","0","p",] },
+            { "before": ["leader", "y"], "after": ["y","i","w",] },
+            {
+                "before": ["leader", "z"],
+                "commands": ["workbench.action.toggleZenMode"]
+            },
+            {
+                "before": ["leader", "/"],
+                "commands": ["editor.action.commentLine"]
+            },
+            {
+                // inserting debug line above
+                "before": ["<leader>", "d"],
+                "after": [
+                "O",
+                "i","m","p","o","r","t"," ","p","d","b",";"," ","p","d","b",".","s","e","t","_","t","r","a","c","e","(",")",
+                "<Esc>"
+                ]
+            },
+
+        ]
+    },
+
+    "vim.handleKeys": {
+        "<C-w>": false,
+        "<C-f>": false,
+    },
+    "git.autofetch": true,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // deleteing without overwriting default register
+        { "before": ["leader", "d"], "after": ["\"","_","d"] },
+        {
+            "before": ["leader", "."],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["leader", ","],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+            "before": ["leader", "w"],
+            "commands": ["editor.action.smartSelect.expand"]
+        },
+        {
+            "before": ["leader", "/"],
+            "commands": ["editor.action.commentLine"]
+        },
+        {
+            "before": ["f", "d"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["f", "d"],
+            "after": ["<Esc>"]
+        }
+
+    ],
+    // correct color self and cls python
+    "editor.semanticTokenColorCustomizations": {
+        "[Default Dark+]": {
+            "rules": {
+                "selfParameter": "#0d0677",
+                "clsParameter": "#0d0677"
+            },
+        },
+        "[Visual Studio Dark]": {
+            "rules": {
+                "selfParameter": "#0d0677",
+                "clsParameter": "#0d0677"
+            },
+        },
+        "[Default Dark Modern]": {
+            "rules": {
+                "selfParameter": "#0d0677",
+                "clsParameter": "#0d0677"
+            },
+        }
+    },
+
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.editor.revealIfOpen": true,
+    "workbench.activityBar.location": "hidden",
+    "zenMode.silentNotifications": false,
+    "zenMode.hideStatusBar": false,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "gitlens.menus": {
+        "editor": {
+            "blame": true,
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "editorGroup": {
+            "blame": true,
+            "compare": true
+        },
+        "editorGutter": {
+            "compare": true,
+            "remote": true,
+            "share": true
+        },
+        "editorTab": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "explorer": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "remote": true
+        },
+        "ghpr": {
+            "worktree": true
+        },
+        "scm": {
+            "graph": true,
+            "visualHistory": true
+        },
+        "scmRepositoryInline": {
+            "generateCommitMessage": true,
+            "graph": true,
+            "stash": true
+        },
+        "scmRepository": {
+            "authors": true,
+            "generateCommitMessage": true,
+            "graph": true,
+            "patch": true,
+            "visualHistory": true
+        },
+        "scmGroupInline": {
+            "stash": true
+        },
+        "scmGroup": {
+            "compare": true,
+            "openClose": true,
+            "patch": true,
+            "stash": true
+        },
+        "scmItemInline": {
+            "stash": false
+        },
+        "scmItem": {
+            "clipboard": true,
+            "compare": true,
+            "history": true,
+            "patch": true,
+            "remote": true,
+            "share": true,
+            "stash": true
+        }
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "go": false
+    },
+    "gitlens.ai.model": "gitkraken",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+    "outline.collapseItems": "alwaysCollapse",
+    "files.watcherExclude": {
+        "**/venv/**": true
+    },
+    "terminal.integrated.enableVisualBell": true,
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "gitlens.mode.active": "zen",
+    "editor.accessibilitySupport": "off",
+    "chat.disableAIFeatures": true,
+    "window.autoDetectColorScheme": false,
+    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+    "git.confirmSync": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "editor.copyWithSyntaxHighlighting": false,
+    "php.validate.executablePath": "/usr/bin/php",
+    "cursor.composer.usageSummaryDisplay": "always",
+}
